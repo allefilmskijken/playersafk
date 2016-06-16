@@ -1,0 +1,65 @@
+{
+ "name"         : "ZemTV.com",
+ "repository"   : "repository.shani",
+ "plugin"       : "plugin.video.ZemTV-shani",
+ "priority"     : 500,
+ "id"           : "provider.zemtv-shani.search.play",
+ "filters"      : {},
+ "postprocess"  : "",
+ "movies"       : [
+  [
+   {
+    "link"      : "plugin://plugin.video.ZemTV-shani/?mode=36&name=Movies&url=zemmovie",
+    "steps"     : [
+     ".*{title}.*"
+     ],
+    "action"    : "PLAY"
+   }
+  ]
+ ],
+ "tvshows"      : [
+  [
+   {
+    "link"      : "plugin://plugin.video.ZemTV-shani/?mode=2&name=All%20Programs%20and%20Talk%20Shows&url=ProgTalkShows",
+    "steps"     : [
+     ".*{clearname}.*"
+     ],
+    "action"    : "PLAY"
+   }
+  ]
+ ],
+ "music"        : [],
+ "music_video"  : [],
+ "live"         : [
+  [
+   {
+    "link"      : "plugin://plugin.video.ZemTV-shani/?mode=13&name=Sports&url=Live",
+    "steps"     : [
+     ".*{basename}.*({extension}|{extension|text_to_number()|number_to_text()}).*"
+     ],
+    "action"    : "PLAY"
+   },
+   {
+    "link"      : "plugin://plugin.video.ZemTV-shani/?mode=2&name=Pakistani%20Live%20Channels&url=PakLive",
+    "steps"     : [
+     ".*{basename}.*({extension}|{extension|text_to_number()|number_to_text()}).*"
+     ],
+    "action"    : "PLAY"
+   },
+   {
+    "link"      : "plugin://plugin.video.ZemTV-shani/?mode=2&name=Indian%20Live%20Channels&url=IndianLive",
+    "steps"     : [
+     ".*{basename}.*({extension}|{extension|text_to_number()|number_to_text()}).*"
+     ],
+    "action"    : "PLAY"
+   },
+   {
+    "link"      : "plugin://plugin.video.ZemTV-shani/?mode=2&name=Punjabi%20Live%20Channels&url=PunjabiLive",
+    "steps"     : [
+     ".*{basename}.*({extension}|{extension|text_to_number()|number_to_text()}).*"
+     ],
+    "action"    : "PLAY"
+   }
+  ]
+ ]
+}
